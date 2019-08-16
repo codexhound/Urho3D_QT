@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GameMenuWidget.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MainMenuWidget.cpp" />
+    <ClCompile Include="NewGameWidget.cpp" />
+    <ClCompile Include="UniQApp.cpp" />
+    <ClCompile Include="WidgetObject.cpp" />
+    <ClCompile Include="WindowMain.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="GameMenuWidget.h" />
+    <QtMoc Include="MainMenuWidget.h" />
+    <QtMoc Include="NewGameWidget.h" />
+    <QtMoc Include="UniQApp.h" />
+    <QtMoc Include="WidgetObject.h" />
+    <QtMoc Include="WindowMain.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="UI\GameMenu.ui" />
+    <QtUic Include="UI\MainMenu.ui" />
+    <QtUic Include="UI\NewGame.ui" />
+    <QtUic Include="UI\MainWindow.ui" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B12702AD-ABFB-343A-A199-8E24837244A3}</ProjectGuid>
+    <Keyword>Qt4VSv1.0</Keyword>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Urho3D_QT</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup Condition="'$(QtMsBuild)'=='' or !Exists('$(QtMsBuild)\qt.targets')">
+    <QtMsBuild>$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <TargetName>$(Configuration)$(ProjectName)</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <TargetName>$(Configuration)$(ProjectName)</TargetName>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
+    <Import Project="$(QtMsBuild)\qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="QTUrho.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="QTUrho.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Qt\Qt-5.13.0\include;C:\Qt\Qt-5.13.0\include\QtCore;C:\Qt\Qt-5.13.0\include\QtGui;$(SolutionDir)GeneratedFiles;$(SolutionDir)$(Configuration);$(QtDir)\include\Qt3DCore;$(QtDir)\include\QtNetwork;$(QtDir)\include\QtWidgets;$(Urho3d)\include;$(Urho3d)\include\Urho3D\ThirdParty;$(SolutionDir)GeneratedFiles</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalDependencies>d3dcompiler.lib;D3d9.lib;dxguid.lib;DXGI.lib;D3D11.lib;Opengl32.lib;Setupapi.lib;Wtsapi32.lib;Dwmapi.lib;imm32.lib;C:\Qt\Qt-5.13.0\plugins\platforms\qwindowsd.lib;UserEnv.lib;Ws2_32.lib;Version.lib;Winmm.lib;netapi32.lib;c:\Qt\Qt-5.13.0\lib\clip2trid.lib;c:\Qt\Qt-5.13.0\lib\clipperd.lib;c:\Qt\Qt-5.13.0\lib\libEGLd.lib;c:\Qt\Qt-5.13.0\lib\libGLESv2d.lib;c:\Qt\Qt-5.13.0\lib\poly2trid.lib;c:\Qt\Qt-5.13.0\lib\Qt53DAnimationd.lib;c:\Qt\Qt-5.13.0\lib\Qt53DCored.lib;c:\Qt\Qt-5.13.0\lib\Qt53DExtrasd.lib;c:\Qt\Qt-5.13.0\lib\Qt53DInputd.lib;c:\Qt\Qt-5.13.0\lib\Qt53DLogicd.lib;c:\Qt\Qt-5.13.0\lib\Qt53DQuickAnimationd.lib;c:\Qt\Qt-5.13.0\lib\Qt53DQuickd.lib;c:\Qt\Qt-5.13.0\lib\Qt53DQuickExtrasd.lib;c:\Qt\Qt-5.13.0\lib\Qt53DQuickInputd.lib;c:\Qt\Qt-5.13.0\lib\Qt53DQuickRenderd.lib;c:\Qt\Qt-5.13.0\lib\Qt53DQuickScene2D.lib;c:\Qt\Qt-5.13.0\lib\Qt53DQuickScene2Dd.lib;c:\Qt\Qt-5.13.0\lib\Qt53DRenderd.lib;c:\Qt\Qt-5.13.0\lib\Qt5AccessibilitySupportd.lib;c:\Qt\Qt-5.13.0\lib\Qt5AxBased.lib;c:\Qt\Qt-5.13.0\lib\Qt5AxContainerd.lib;c:\Qt\Qt-5.13.0\lib\Qt5Bluetoothd.lib;c:\Qt\Qt-5.13.0\lib\Qt5Bodymovind.lib;c:\Qt\Qt-5.13.0\lib\Qt5Chartsd.lib;c:\Qt\Qt-5.13.0\lib\Qt5Concurrentd.lib;c:\Qt\Qt-5.13.0\lib\Qt5Cored.lib;c:\Qt\Qt-5.13.0\lib\Qt5DataVisualizationd.lib;c:\Qt\Qt-5.13.0\lib\Qt5DBusd.lib;c:\Qt\Qt-5.13.0\lib\Qt5DesignerComponentsd.lib;c:\Qt\Qt-5.13.0\lib\Qt5Designerd.lib;c:\Qt\Qt-5.13.0\lib\Qt5DeviceDiscoverySupportd.lib;c:\Qt\Qt-5.13.0\lib\Qt5EdidSupportd.lib;c:\Qt\Qt-5.13.0\lib\Qt5EglSupportd.lib;c:\Qt\Qt-5.13.0\lib\Qt5EventDispatcherSupportd.lib;c:\Qt\Qt-5.13.0\lib\Qt5FbSupportd.lib;c:\Qt\Qt-5.13.0\lib\Qt5FontDatabaseSupportd.lib;c:\Qt\Qt-5.13.0\lib\Qt5Gamepad.lib;c:\Qt\Qt-5.13.0\lib\Qt5Gamepadd.lib;c:\Qt\Qt-5.13.0\lib\Qt5Guid.lib;c:\Qt\Qt-5.13.0\lib\Qt5Helpd.lib;c:\Qt\Qt-5.13.0\lib\Qt5Locationd.lib;c:\Qt\Qt-5.13.0\lib\Qt5Multimediad.lib;c:\Qt\Qt-5.13.0\lib\Qt5MultimediaQuickd.lib;c:\Qt\Qt-5.13.0\lib\Qt5MultimediaWidgetsd.lib;c:\Qt\Qt-5.13.0\lib\Qt5NetworkAuthd.lib;c:\Qt\Qt-5.13.0\lib\Qt5Networkd.lib;c:\Qt\Qt-5.13.0\lib\Qt5Nfcd.lib;c:\Qt\Qt-5.13.0\lib\Qt5OpenGLd.lib;c:\Qt\Qt-5.13.0\lib\Qt5OpenGLExtensionsd.lib;c:\Qt\Qt-5.13.0\lib\Qt5PacketProtocold.lib;c:\Qt\Qt-5.13.0\lib\Qt5PlatformCompositorSupportd.lib;c:\Qt\Qt-5.13.0\lib\Qt5Positioningd.lib;c:\Qt\Qt-5.13.0\lib\Qt5PositioningQuickd.lib;c:\Qt\Qt-5.13.0\lib\Qt5PrintSupportd.lib;c:\Qt\Qt-5.13.0\lib\Qt5Purchasingd.lib;c:\Qt\Qt-5.13.0\lib\Qt5Qmld.lib;c:\Qt\Qt-5.13.0\lib\Qt5QmlDebugd.lib;c:\Qt\Qt-5.13.0\lib\Qt5QuickControls2d.lib;c:\Qt\Qt-5.13.0\lib\Qt5Quickd.lib;c:\Qt\Qt-5.13.0\lib\Qt5QuickParticlesd.lib;c:\Qt\Qt-5.13.0\lib\Qt5QuickShapesd.lib;c:\Qt\Qt-5.13.0\lib\Qt5QuickTemplates2d.lib;c:\Qt\Qt-5.13.0\lib\Qt5QuickTestd.lib;c:\Qt\Qt-5.13.0\lib\Qt5QuickWidgetsd.lib;c:\Qt\Qt-5.13.0\lib\Qt5RemoteObjectsd.lib;c:\Qt\Qt-5.13.0\lib\Qt5Scriptd.lib;c:\Qt\Qt-5.13.0\lib\Qt5ScriptToolsd.lib;c:\Qt\Qt-5.13.0\lib\Qt5Scxmld.lib;c:\Qt\Qt-5.13.0\lib\Qt5Sensorsd.lib;c:\Qt\Qt-5.13.0\lib\Qt5SerialBusd.lib;c:\Qt\Qt-5.13.0\lib\Qt5SerialPortd.lib;c:\Qt\Qt-5.13.0\lib\Qt5Sqld.lib;c:\Qt\Qt-5.13.0\lib\Qt5Svgd.lib;c:\Qt\Qt-5.13.0\lib\Qt5Testd.lib;c:\Qt\Qt-5.13.0\lib\Qt5TextToSpeechd.lib;c:\Qt\Qt-5.13.0\lib\Qt5ThemeSupportd.lib;c:\Qt\Qt-5.13.0\lib\Qt5UiToolsd.lib;c:\Qt\Qt-5.13.0\lib\Qt5VirtualKeyboard.lib;c:\Qt\Qt-5.13.0\lib\Qt5VirtualKeyboardd.lib;c:\Qt\Qt-5.13.0\lib\Qt5WebChanneld.lib;c:\Qt\Qt-5.13.0\lib\Qt5WebSocketsd.lib;c:\Qt\Qt-5.13.0\lib\Qt5WebViewd.lib;c:\Qt\Qt-5.13.0\lib\Qt5Widgetsd.lib;c:\Qt\Qt-5.13.0\lib\Qt5WindowsUIAutomationSupportd.lib;c:\Qt\Qt-5.13.0\lib\Qt5WinExtrasd.lib;c:\Qt\Qt-5.13.0\lib\Qt5Xmld.lib;c:\Qt\Qt-5.13.0\lib\Qt5XmlPatternsd.lib;c:\Qt\Qt-5.13.0\lib\qtfreetyped.lib;c:\Qt\Qt-5.13.0\lib\qtharfbuzzd.lib;c:\Qt\Qt-5.13.0\lib\qtlibpngd.lib;c:\Qt\Qt-5.13.0\lib\qtmaind.lib;c:\Qt\Qt-5.13.0\lib\qtopenwnnd.lib;c:\Qt\Qt-5.13.0\lib\qtpcre2d.lib;c:\Qt\Qt-5.13.0\lib\qtpinyind.lib;c:\Qt\Qt-5.13.0\lib\qttcimed.lib;Urho3D_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib\$(Configuration);$(SolutionDir)lib;$(Urho3d)\lib</AdditionalLibraryDirectories>
+    </Link>
+    <QtMoc>
+      <Define>UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;%(PreprocessorDefinitions)</Define>
+      <IncludePath>C:\Qt\Qt-5.13.0\include;C:\Qt\Qt-5.13.0\include\QtCore;C:\Qt\Qt-5.13.0\include\QtGui</IncludePath>
+      <OutputFile>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <QTDIR>C:\Qt\Qt-5.13.0</QTDIR>
+    </QtMoc>
+    <PostBuildEvent>
+      <Command>dumpbin /exports $(TargetPath)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalIncludeDirectories>C:\Qt\Qt-5.13.0\include;C:\Qt\Qt-5.13.0\include\QtCore;C:\Qt\Qt-5.13.0\include\QtGui;$(SolutionDir)Universalis\GeneratedFiles;$(SolutionDir)ObjectLinkedList;$(SolutionDir)GeneratedFiles\$(Configuration);$(QtDir)\include\Qt3DCore;$(QtDir)\include\QtNetwork;$(QtDir)\include\QtWidgets;$(Urho3d)\include;$(Urho3d)\include\Urho3D\ThirdParty;$(SolutionDir)GeneratedFiles</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <QtMoc>
+      <Define />
+      <IncludePath>C:\Qt\Qt-5.13.0\include;C:\Qt\Qt-5.13.0\include\QtCore;C:\Qt\Qt-5.13.0\include\QtGui</IncludePath>
+      <OutputFile>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <QTDIR>C:\Qt\Qt-5.13.0</QTDIR>
+    </QtMoc>
+    <Link>
+      <AdditionalDependencies>d3dcompiler.lib;D3d9.lib;dxguid.lib;DXGI.lib;D3D11.lib;Opengl32.lib;Setupapi.lib;Wtsapi32.lib;Dwmapi.lib;imm32.lib;C:\Qt\Qt-5.13.0\lib\qttcime.lib;C:\Qt\Qt-5.13.0\plugins\platforms\qwindows.lib;UserEnv.lib;Ws2_32.lib;Version.lib;Winmm.lib;netapi32.lib;C:\Qt\Qt-5.13.0\lib\clip2tri.lib;C:\Qt\Qt-5.13.0\lib\clipper.lib;C:\Qt\Qt-5.13.0\lib\libEGL.lib;C:\Qt\Qt-5.13.0\lib\libGLESv2.lib;C:\Qt\Qt-5.13.0\lib\poly2tri.lib;C:\Qt\Qt-5.13.0\lib\Qt53DAnimation.lib;C:\Qt\Qt-5.13.0\lib\Qt53DCore.lib;C:\Qt\Qt-5.13.0\lib\Qt53DExtras.lib;C:\Qt\Qt-5.13.0\lib\Qt53DInput.lib;C:\Qt\Qt-5.13.0\lib\Qt53DLogic.lib;C:\Qt\Qt-5.13.0\lib\Qt53DQuick.lib;C:\Qt\Qt-5.13.0\lib\Qt53DQuickAnimation.lib;C:\Qt\Qt-5.13.0\lib\Qt53DQuickExtras.lib;C:\Qt\Qt-5.13.0\lib\Qt53DQuickInput.lib;C:\Qt\Qt-5.13.0\lib\Qt53DQuickRender.lib;C:\Qt\Qt-5.13.0\lib\Qt53DQuickScene2D.lib;C:\Qt\Qt-5.13.0\lib\Qt53DRender.lib;C:\Qt\Qt-5.13.0\lib\Qt5AccessibilitySupport.lib;C:\Qt\Qt-5.13.0\lib\Qt5AxBase.lib;C:\Qt\Qt-5.13.0\lib\Qt5AxContainer.lib;C:\Qt\Qt-5.13.0\lib\Qt5Bluetooth.lib;C:\Qt\Qt-5.13.0\lib\Qt5Bodymovin.lib;C:\Qt\Qt-5.13.0\lib\Qt5Charts.lib;C:\Qt\Qt-5.13.0\lib\Qt5Concurrent.lib;C:\Qt\Qt-5.13.0\lib\Qt5Core.lib;C:\Qt\Qt-5.13.0\lib\Qt5DataVisualization.lib;C:\Qt\Qt-5.13.0\lib\Qt5DBus.lib;C:\Qt\Qt-5.13.0\lib\Qt5Designer.lib;C:\Qt\Qt-5.13.0\lib\Qt5DesignerComponents.lib;C:\Qt\Qt-5.13.0\lib\Qt5DeviceDiscoverySupport.lib;C:\Qt\Qt-5.13.0\lib\Qt5EdidSupport.lib;C:\Qt\Qt-5.13.0\lib\Qt5EglSupport.lib;C:\Qt\Qt-5.13.0\lib\Qt5EventDispatcherSupport.lib;C:\Qt\Qt-5.13.0\lib\Qt5FbSupport.lib;C:\Qt\Qt-5.13.0\lib\Qt5FontDatabaseSupport.lib;C:\Qt\Qt-5.13.0\lib\Qt5Gamepad.lib;C:\Qt\Qt-5.13.0\lib\Qt5Gui.lib;C:\Qt\Qt-5.13.0\lib\Qt5Help.lib;C:\Qt\Qt-5.13.0\lib\Qt5Location.lib;C:\Qt\Qt-5.13.0\lib\Qt5Multimedia.lib;C:\Qt\Qt-5.13.0\lib\Qt5MultimediaQuick.lib;C:\Qt\Qt-5.13.0\lib\Qt5MultimediaWidgets.lib;C:\Qt\Qt-5.13.0\lib\Qt5Network.lib;C:\Qt\Qt-5.13.0\lib\Qt5NetworkAuth.lib;C:\Qt\Qt-5.13.0\lib\Qt5Nfc.lib;C:\Qt\Qt-5.13.0\lib\Qt5OpenGL.lib;C:\Qt\Qt-5.13.0\lib\Qt5OpenGLExtensions.lib;C:\Qt\Qt-5.13.0\lib\Qt5PacketProtocol.lib;C:\Qt\Qt-5.13.0\lib\Qt5PlatformCompositorSupport.lib;C:\Qt\Qt-5.13.0\lib\Qt5Positioning.lib;C:\Qt\Qt-5.13.0\lib\Qt5PositioningQuick.lib;C:\Qt\Qt-5.13.0\lib\Qt5PrintSupport.lib;C:\Qt\Qt-5.13.0\lib\Qt5Purchasing.lib;C:\Qt\Qt-5.13.0\lib\Qt5Qml.lib;C:\Qt\Qt-5.13.0\lib\Qt5QmlDebug.lib;C:\Qt\Qt-5.13.0\lib\Qt5Quick.lib;C:\Qt\Qt-5.13.0\lib\Qt5QuickControls2.lib;C:\Qt\Qt-5.13.0\lib\Qt5QuickParticles.lib;C:\Qt\Qt-5.13.0\lib\Qt5QuickShapes.lib;C:\Qt\Qt-5.13.0\lib\Qt5QuickTemplates2.lib;C:\Qt\Qt-5.13.0\lib\Qt5QuickTest.lib;C:\Qt\Qt-5.13.0\lib\Qt5QuickWidgets.lib;C:\Qt\Qt-5.13.0\lib\Qt5RemoteObjects.lib;C:\Qt\Qt-5.13.0\lib\Qt5Script.lib;C:\Qt\Qt-5.13.0\lib\Qt5ScriptTools.lib;C:\Qt\Qt-5.13.0\lib\Qt5Scxml.lib;C:\Qt\Qt-5.13.0\lib\Qt5Sensors.lib;C:\Qt\Qt-5.13.0\lib\Qt5SerialBus.lib;C:\Qt\Qt-5.13.0\lib\Qt5SerialPort.lib;C:\Qt\Qt-5.13.0\lib\Qt5Sql.lib;C:\Qt\Qt-5.13.0\lib\Qt5Svg.lib;C:\Qt\Qt-5.13.0\lib\Qt5Test.lib;C:\Qt\Qt-5.13.0\lib\Qt5TextToSpeech.lib;C:\Qt\Qt-5.13.0\lib\Qt5ThemeSupport.lib;C:\Qt\Qt-5.13.0\lib\Qt5UiTools.lib;C:\Qt\Qt-5.13.0\lib\Qt5VirtualKeyboard.lib;C:\Qt\Qt-5.13.0\lib\Qt5WebChannel.lib;C:\Qt\Qt-5.13.0\lib\Qt5WebSockets.lib;C:\Qt\Qt-5.13.0\lib\Qt5WebView.lib;C:\Qt\Qt-5.13.0\lib\Qt5Widgets.lib;C:\Qt\Qt-5.13.0\lib\Qt5WindowsUIAutomationSupport.lib;C:\Qt\Qt-5.13.0\lib\Qt5WinExtras.lib;C:\Qt\Qt-5.13.0\lib\Qt5Xml.lib;C:\Qt\Qt-5.13.0\lib\Qt5XmlPatterns.lib;C:\Qt\Qt-5.13.0\lib\qtfreetype.lib;C:\Qt\Qt-5.13.0\lib\qtharfbuzz.lib;C:\Qt\Qt-5.13.0\lib\qtlibpng.lib;C:\Qt\Qt-5.13.0\lib\qtmain.lib;C:\Qt\Qt-5.13.0\lib\qtopenwnn.lib;C:\Qt\Qt-5.13.0\lib\qtpcre2.lib;C:\Qt\Qt-5.13.0\lib\qtpinyin.lib;Urho3D.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib\$(Configuration);$(SolutionDir)lib;$(Urho3d)\lib</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties MocDir=".\GeneratedFiles\$(ConfigurationName)" UicDir=".\GeneratedFiles" RccDir=".\GeneratedFiles" lupdateOptions="" lupdateOnBuild="0" lreleaseOptions="" MocOptions="" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,17 @@
+
+*.ipch
+*.opendb
+*.db
+*.pdb
+*.ilk
+*.lib
+.vs/QTUrho/v16/.suo
+.vs/Urho3D_QT/v16/.suo
+*.exe
+*.exp
+*.filters
+*.user
+*.log
+*.obj
+*.tlog
+x64/Debug/QTUrho.vcxproj.FileListAbsolute.txt
