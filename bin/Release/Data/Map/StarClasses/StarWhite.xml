@@ -1,0 +1,7 @@
+<material>
+    <technique name="Techniques/DiffUnlitParticleAdd.xml" />
+    <texture unit="diffuse" name="Map/StarClasses/a_star.dds" />
+    <parameter name="MatDiffColor" value="1 0.9 1 1" />
+	<parameter name="MatEnvMapColor" value="0.5 0.5 1" />
+	<parameter name="MatEmissiveColor" value="1 1 1" />
+</material>

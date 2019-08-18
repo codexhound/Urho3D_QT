@@ -10,6 +10,6 @@ class WidgetObject : public QWidget, public Object
     Q_OBJECT
     URHO3D_OBJECT(WidgetObject, Object)
     public:
-        WidgetObject(Context * context, QWidget* parent = nullptr);
+        WidgetObject(Urho3D::Context * context, QWidget* parent = nullptr);
 
 };

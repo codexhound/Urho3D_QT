@@ -1,0 +1,6 @@
+<material>
+    <technique name="Techniques/DiffUnlitParticleAlpha.xml" />
+    <texture unit="diffuse" name="Textures/Particles/halo_1024.dds" />
+    <parameter name="MatDiffColor" value="1 0.9 0 1" />
+	<parameter name="MatEnvMapColor" value="0.5 0.5 1" />
+</material>

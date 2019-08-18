@@ -1,0 +1,18 @@
+returns a set of line as a set of billboards
+attach it to a node to render it
+assumes there is a function somewhere to get distance between 2 points
+its easy to write (just the old square root trig function)
+BillboardSet * drawLine(int inc, float size, Vector3 start&, Vector3 end&)
+{
+    Vector3 dir = end - start;
+    float distance = distance(start,end);
+    BillboardSet * set = new BillboardSet(context_)
+    float steps = (float)distance/(float)inc
+    set->SetNumBillboards(steps);
+    for(int i = 0; i < steps; i++)
+    {
+    	Billboard * bb = set->GetBillboard(i);
+        bb->position_
+    }
+
+}

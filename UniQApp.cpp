@@ -36,6 +36,7 @@ int UniQApp::Run()
             return -1;
 
         context_->RegisterSubsystem(this);
+        context_->RegisterSubsystem(m_Engine);
 
         return QApplication::exec();
     }

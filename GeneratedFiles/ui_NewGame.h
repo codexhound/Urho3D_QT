@@ -27,6 +27,7 @@ public:
     QHBoxLayout *horizontalLayout_3;
     QSpacerItem *horizontalSpacer_4;
     QVBoxLayout *verticalLayout_3;
+    QPushButton *m_startButton;
     QPushButton *m_backButton;
     QSpacerItem *horizontalSpacer_3;
     QSpacerItem *verticalSpacer_2;
@@ -50,6 +51,11 @@ public:
 
         verticalLayout_3 = new QVBoxLayout();
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
+        m_startButton = new QPushButton(NewGame);
+        m_startButton->setObjectName(QString::fromUtf8("m_startButton"));
+
+        verticalLayout_3->addWidget(m_startButton);
+
         m_backButton = new QPushButton(NewGame);
         m_backButton->setObjectName(QString::fromUtf8("m_backButton"));
 
@@ -78,6 +84,7 @@ public:
     void retranslateUi(QWidget *NewGame)
     {
         NewGame->setWindowTitle(QCoreApplication::translate("NewGame", "Form", nullptr));
+        m_startButton->setText(QCoreApplication::translate("NewGame", "Start", nullptr));
         m_backButton->setText(QCoreApplication::translate("NewGame", "Back", nullptr));
     } // retranslateUi
 

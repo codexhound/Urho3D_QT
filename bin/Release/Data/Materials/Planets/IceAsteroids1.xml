@@ -1,0 +1,9 @@
+<material>
+    <technique name="Techniques/DiffNormalSpec.xml" quality="1" />
+    <technique name="Techniques/Diff.xml" quality="0" />
+    <texture unit="diffuse" name="Textures/Planets/ice_asteroids_diffuse.dds" />
+    <texture unit="normal" name="Textures/Planets/ice_asteroids_normal.dds" />
+    <texture unit="spec" name="Textures/Planets/ice_asteroids_specular.dds" />
+    <shader psdefines="PACKEDNORMAL" />
+    <parameter name="MatSpecColor" value="0.3 0.3 0.3 16" />
+</material>

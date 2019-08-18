@@ -1,0 +1,8 @@
+<material>
+    <technique name="Techniques/DiffUnlitParticleAdd.xml" />
+    <texture unit="diffuse" name="Textures/Particles/sun_flairs.dds" />
+    <parameter name="MatDiffColor" value="0.89,.60 0.60 1" />
+	<parameter name="MatEmissiveColor" value="1 1 1" />
+	<parameter name="MatEnvMapColor" value="0.5 0.5 0.5" />
+	<parameter name="MatSpecColor" value="0.8 0.8 0.8 4 16" />
+</material>

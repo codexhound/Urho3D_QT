@@ -1,0 +1,7 @@
+<material>
+    <technique name="Techniques/DiffUnlitParticleAdd.xml" />
+    <texture unit="diffuse" name="Textures/Particles/FlarePoint.dds" />
+    <parameter name="MatEmissiveColor" value="1 1 0" />
+	<parameter name="MatEnvMapColor" value="0.5 0.5 1" />
+	<parameter name="MatSpecColor" value="0.8 0.8 0.8 4 16" />
+</material>

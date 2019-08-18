@@ -45,6 +45,13 @@
      <item>
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
+        <widget class="QPushButton" name="m_startButton">
+         <property name="text">
+          <string>Start</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QPushButton" name="m_backButton">
          <property name="text">
           <string>Back</string>

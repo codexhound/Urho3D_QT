@@ -1,0 +1,7 @@
+
+<material>
+    <technique name="Techniques/DiffUnlitParticleAdd.xml" />
+    <texture unit="diffuse" name="Map/purplegalaxy.png" />
+    <parameter name="MatDiffColor" value="0.9 0.9 0.9 1" />
+	<parameter name="MatEnvMapColor" value="0.1 0.1 0.1" />
+</material>
